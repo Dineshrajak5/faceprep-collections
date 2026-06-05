@@ -1,11 +1,12 @@
 // Vercel Edge Middleware — protects the dashboard.
-// Unauthenticated requests are redirected to /login.html.
+// Unauthenticated requests are redirected to the login page.
 // The session cookie is HMAC-signed with SESSION_SECRET (server-only env var),
 // so it cannot be forged from the browser.
 
 export const config = {
-  // Run on everything except the login page, the auth API, and static asset noise.
-  matcher: ['/((?!login.html|api/auth|favicon.ico|_vercel).*)'],
+  // Allow the login page (clean URL `/login` AND `/login.html`), the auth API,
+  // and Vercel internals through without a session. Gate everything else.
+  matcher: ['/((?!login|api/auth|favicon.ico|robots.txt|_vercel).*)'],
 };
 
 function b64urlToBytes(s) {
@@ -48,7 +49,7 @@ export default async function middleware(req) {
     return; // authenticated — let the request through
   }
   const url = new URL(req.url);
-  url.pathname = '/login.html';
+  url.pathname = '/login';   // clean URL; Vercel serves login.html here
   url.search = '';
   return Response.redirect(url, 302);
 }
