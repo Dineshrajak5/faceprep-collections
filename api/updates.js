@@ -6,7 +6,7 @@
 // Follow-up data lives ENTIRELY in this database, joined to invoices by Proforma Invoice # (`key`).
 // Re-scraping the Google Sheet never touches these tables, so notes persist for the same entry.
 
-const SB = process.env.SUPABASE_URL;
+const SB = (process.env.SUPABASE_URL || '').replace(/\/+$/, '');
 const KEY = process.env.SUPABASE_SERVICE_KEY;
 
 async function sb(path, opts = {}) {
