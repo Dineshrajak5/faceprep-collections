@@ -620,9 +620,9 @@ function trend(rows){const m={};
   rows.forEach(r=>{if(!r.pdate)return;const k=r.pdate.slice(0,7);if(!m[k])m[k]={coll:0,out:0};m[k].coll+=r.collected;m[k].out+=r.outstanding;});
   const keys=Object.keys(m).sort();const el=document.getElementById('c_trend');
   if(!keys.length){el.innerHTML='<div class="empty">No dated invoices</div>';return;}
-  const W=1000,H=200,pad=36,max=Math.max(1,...keys.map(k=>m[k].coll+m[k].out)),bw=(W-pad*2)/keys.length;
+  const W=1000,H=200,pad=36,max=Math.max(1,...keys.map(k=>Math.max(0,m[k].coll)+Math.max(0,m[k].out))),bw=(W-pad*2)/keys.length;
   let b='',gl='';
-  keys.forEach((k,i)=>{const x=pad+i*bw,cH=m[k].coll/max*(H-pad*2),oH=m[k].out/max*(H-pad*2),bx=x+bw*0.18,bwid=bw*0.64,yB=H-pad;
+  keys.forEach((k,i)=>{const x=pad+i*bw,cH=Math.max(0,m[k].coll)/max*(H-pad*2),oH=Math.max(0,m[k].out)/max*(H-pad*2),bx=x+bw*0.18,bwid=bw*0.64,yB=H-pad;
     b+=`<rect x="${bx}" y="${yB-oH}" width="${bwid}" height="${oH}" fill="var(--accent)" rx="2"><title>${k} · Outstanding ${inrFull(m[k].out)}</title></rect>`;
     b+=`<rect x="${bx}" y="${yB-oH-cH}" width="${bwid}" height="${cH}" fill="var(--green)" rx="2"><title>${k} · Collected ${inrFull(m[k].coll)}</title></rect>`;
     if(keys.length<=24||i%2===0){const d=new Date(k+'-01');b+=`<text class="tlabel" x="${x+bw/2}" y="${H-12}" text-anchor="middle">${d.toLocaleDateString('en',{month:'short'})}'${k.slice(2,4)}</text>`;}});
