@@ -447,6 +447,7 @@ td .ds.f{color:var(--ink3)}
   <section class="tab" id="tab-collections">
     <div class="slicers">
       <div class="slc"><span class="sl">Year</span><select id="colYear" style="min-width:120px"></select></div>
+      <div class="slc"><span class="sl">Month</span><select id="colMonth" style="min-width:130px"></select></div>
       <div class="slc" style="flex:1;min-width:200px"><span class="sl">Search</span><input type="text" id="colSearch" placeholder="client, deal, invoice…" style="flex:1"></div>
     </div>
     <div class="mini-kpis" id="colKpis"></div>
@@ -717,7 +718,7 @@ function syncControls(){f_fy.value=F.fy;f_team.value=F.team;f_owner.value=F.owne
 
 const COL_SUMMARY = {"total":1548455037.23,"txns":4420,"tds":124691161.95,"gross":1686101546.0,"months":[{"m":"2018-08","amt":410000.0,"n":4,"tds":0},{"m":"2018-11","amt":1000000.0,"n":1,"tds":0},{"m":"2018-12","amt":500000.0,"n":1,"tds":0},{"m":"2019-02","amt":500000.0,"n":1,"tds":0},{"m":"2019-07","amt":638500.0,"n":2,"tds":0.0},{"m":"2019-08","amt":170925.0,"n":2,"tds":13950.0},{"m":"2019-09","amt":125000.0,"n":1,"tds":0.0},{"m":"2019-10","amt":190000.0,"n":1,"tds":0.0},{"m":"2019-12","amt":305930.0,"n":2,"tds":0},{"m":"2020-01","amt":2943162.0,"n":4,"tds":0.0},{"m":"2020-02","amt":1401168.0,"n":7,"tds":36290.0},{"m":"2020-03","amt":671715.0,"n":5,"tds":15900.0},{"m":"2020-04","amt":4370385.0,"n":14,"tds":174212.0},{"m":"2020-05","amt":8641779.0,"n":39,"tds":606524.0},{"m":"2020-06","amt":8092840.0,"n":44,"tds":779003.0},{"m":"2020-07","amt":7954661.0,"n":60,"tds":408147.0},{"m":"2020-08","amt":14764153.0,"n":58,"tds":1073132.0},{"m":"2020-09","amt":13034414.0,"n":60,"tds":831074.0},{"m":"2020-10","amt":10882409.0,"n":65,"tds":707545.0},{"m":"2020-11","amt":7561954.0,"n":43,"tds":461008.0},{"m":"2020-12","amt":14675961.0,"n":82,"tds":886060.0},{"m":"2021-01","amt":8475479.0,"n":78,"tds":599864.0},{"m":"2021-02","amt":17003588.0,"n":86,"tds":1117056.0},{"m":"2021-03","amt":18061537.0,"n":86,"tds":1098733.0},{"m":"2021-04","amt":11493785.0,"n":38,"tds":819003.0},{"m":"2021-05","amt":5089265.0,"n":26,"tds":435432.0},{"m":"2021-06","amt":10118871.0,"n":64,"tds":989793.0},{"m":"2021-07","amt":8180360.0,"n":46,"tds":637691.0},{"m":"2021-08","amt":21663347.0,"n":86,"tds":1822201.0},{"m":"2021-09","amt":12338059.0,"n":80,"tds":1025753.0},{"m":"2021-10","amt":19318036.0,"n":90,"tds":1495397.0},{"m":"2021-11","amt":10834770.0,"n":64,"tds":905633.0},{"m":"2021-12","amt":15912470.0,"n":86,"tds":1141127.0},{"m":"2022-01","amt":8809917.0,"n":44,"tds":751709.0},{"m":"2022-02","amt":20301613.0,"n":66,"tds":1805382.0},{"m":"2022-03","amt":28796185.0,"n":95,"tds":2607862.0},{"m":"2022-04","amt":11089684.0,"n":23,"tds":874848.0},{"m":"2022-05","amt":9186956.0,"n":28,"tds":830285.0},{"m":"2022-06","amt":14106267.0,"n":74,"tds":1087048.0},{"m":"2022-07","amt":15587915.0,"n":46,"tds":1315993.0},{"m":"2022-08","amt":17846888.0,"n":83,"tds":1663049.0},{"m":"2022-09","amt":19252744.16,"n":77,"tds":1732104.0},{"m":"2022-10","amt":14875685.0,"n":75,"tds":1255118.0},{"m":"2022-11","amt":15774944.0,"n":68,"tds":1271919.0},{"m":"2022-12","amt":27017596.01,"n":39,"tds":2167662.0},{"m":"2023-01","amt":16029240.0,"n":57,"tds":1481409.0},{"m":"2023-02","amt":13849440.0,"n":56,"tds":1199075.0},{"m":"2023-03","amt":39112709.0,"n":55,"tds":3585205.0},{"m":"2023-04","amt":22285327.63,"n":66,"tds":1773735.0},{"m":"2023-05","amt":23680569.0,"n":34,"tds":2115242.0},{"m":"2023-06","amt":18448668.0,"n":58,"tds":1542853.0},{"m":"2023-07","amt":20712815.0,"n":45,"tds":1984665.0},{"m":"2023-08","amt":30486817.0,"n":58,"tds":2538411.0},{"m":"2023-09","amt":24480416.0,"n":62,"tds":2250885.0},{"m":"2023-10","amt":12733337.0,"n":46,"tds":1107565.0},{"m":"2023-11","amt":21817613.0,"n":61,"tds":1990329.05},{"m":"2023-12","amt":41218767.0,"n":63,"tds":3746238.0},{"m":"2024-01","amt":8932893.0,"n":81,"tds":804882.0},{"m":"2024-02","amt":19024671.91,"n":70,"tds":1717272.0},{"m":"2024-03","amt":54429397.97,"n":79,"tds":4976878.0},{"m":"2024-04","amt":29539763.0,"n":79,"tds":2091744.9},{"m":"2024-05","amt":52026319.0,"n":84,"tds":4730769.0},{"m":"2024-06","amt":12121274.0,"n":35,"tds":1146623.0},{"m":"2024-07","amt":14350720.0,"n":40,"tds":1288239.0},{"m":"2024-08","amt":15901058.0,"n":40,"tds":1350859.0},{"m":"2024-09","amt":35524125.21,"n":62,"tds":3266036.0},{"m":"2024-10","amt":27195958.87,"n":64,"tds":2270074.0},{"m":"2024-11","amt":37240249.0,"n":68,"tds":1889586.0},{"m":"2024-12","amt":29677293.0,"n":46,"tds":2438151.0},{"m":"2025-01","amt":15199922.0,"n":58,"tds":1455220.0},{"m":"2025-02","amt":23670419.5,"n":67,"tds":2061639.0},{"m":"2025-03","amt":34864186.0,"n":71,"tds":2899461.0},{"m":"2025-04","amt":31867439.0,"n":47,"tds":2595840.0},{"m":"2025-05","amt":31481253.0,"n":72,"tds":2777279.0},{"m":"2025-06","amt":8458802.0,"n":34,"tds":744589.0},{"m":"2025-07","amt":25033288.0,"n":35,"tds":2230288.0},{"m":"2025-08","amt":24730902.0,"n":39,"tds":2401939.0},{"m":"2025-09","amt":29466550.0,"n":25,"tds":2239855.0},{"m":"2025-10","amt":18644827.0,"n":28,"tds":1831488.0},{"m":"2025-11","amt":23992900.0,"n":67,"tds":1570371.0},{"m":"2025-12","amt":44329901.0,"n":77,"tds":2113334.0},{"m":"2026-01","amt":17809167.0,"n":49,"tds":1114329.0},{"m":"2026-02","amt":50879544.0,"n":66,"tds":3493580.0},{"m":"2026-03","amt":36284987.97,"n":98,"tds":2847271.0},{"m":"2026-04","amt":20332448.0,"n":72,"tds":1282752.0},{"m":"2026-05","amt":18401601.0,"n":41,"tds":1618562.0},{"m":"2026-06","amt":1635542.0,"n":6,"tds":60900.0},{"m":"Unknown","amt":10580999.0,"n":15,"tds":622232.0}],"years":{"2018":1910000.0,"2019":1930355.0,"2020":94994601.0,"2021":158489567.0,"2022":202646394.17,"2023":284855718.63,"2024":335963722.96,"2025":311740389.5,"2026":145343289.97}};
 let COL=[]; let COLLIVE=false;
-let COLYEAR='', COLSEARCH='';
+let COLYEAR='', COLMONTH='', COLSEARCH='';
 
 let TAB='overview';
 let MODE='invoicing';
@@ -859,10 +860,11 @@ function colMonthly(){ // returns sorted [{m, amt, n, tds}] honoring year+search
     return Object.values(m).sort((a,b)=>a.m<b.m?-1:1);
   }
   // fallback: embedded summary (no search support)
-  return COL_SUMMARY.months.filter(x=>!COLYEAR||x.m.slice(0,4)===COLYEAR);
+  return COL_SUMMARY.months.filter(x=>(!COLYEAR||x.m.slice(0,4)===COLYEAR)&&(!COLMONTH||x.m===COLMONTH));
 }
 function passCol(t){
   if(COLYEAR&&(!t.date||t.date.slice(0,4)!==COLYEAR))return false;
+  if(COLMONTH&&(!t.date||t.date.slice(0,7)!==COLMONTH))return false;
   if(COLSEARCH){const q=COLSEARCH.toLowerCase();
     if(!((t.client||'')+' '+(t.deal||'')+' '+(t.pi||'')+' '+(t.ti||'')+' '+(t.desc||'')).toLowerCase().includes(q))return false;}
   return true;
@@ -873,6 +875,14 @@ function renderCollections(){
   if(!ysel.dataset.filled){const years=COL.length?[...new Set(COL.map(t=>t.date&&t.date.slice(0,4)).filter(Boolean))]:Object.keys(COL_SUMMARY.years);
     ysel.innerHTML='<option value="">All years</option>'+years.sort().reverse().map(y=>`<option value="${y}">${y}</option>`).join('');
     ysel.dataset.filled='1';ysel.value=COLYEAR;}
+  // month options (scoped to selected year)
+  const msel=document.getElementById('colMonth');
+  const MN=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const src=COL.length?[...new Set(COL.map(t=>t.date&&t.date.slice(0,7)).filter(Boolean))]:COL_SUMMARY.months.map(x=>x.m).filter(x=>x!=='Unknown');
+  const monthsList=src.filter(m=>!COLYEAR||m.slice(0,4)===COLYEAR).sort();
+  msel.innerHTML='<option value="">All months</option>'+monthsList.map(m=>`<option value="${m}">${MN[+m.slice(5,7)-1]} ${m.slice(0,4)}</option>`).join('');
+  if(COLMONTH&&!monthsList.includes(COLMONTH))COLMONTH='';
+  msel.value=COLMONTH;
   const months=colMonthly();
   const total=months.reduce((a,x)=>a+x.amt,0);
   const txns=months.reduce((a,x)=>a+x.n,0);
@@ -931,7 +941,8 @@ function colTable(){
     if(COLSORT.key===k)COLSORT.dir*=-1;else{COLSORT.key=k;COLSORT.dir=COLCOLS.find(c=>c.k===k).num?-1:1;}colTable();});
   document.getElementById('colCount').textContent=list.length.toLocaleString('en-IN')+' transactions · '+inr(list.reduce((a,t)=>a+t.amt,0))+(list.length>CAP?` · showing first ${CAP}`:'');
 }
-document.getElementById('colYear').onchange=e=>{COLYEAR=e.target.value;renderCollections();};
+document.getElementById('colYear').onchange=e=>{COLYEAR=e.target.value;COLMONTH='';renderCollections();};
+document.getElementById('colMonth').onchange=e=>{COLMONTH=e.target.value;renderCollections();};
 let cst;document.getElementById('colSearch').oninput=e=>{clearTimeout(cst);cst=setTimeout(()=>{COLSEARCH=e.target.value;renderCollections();},180);};
 async function loadCollections(){
   try{const r=await fetch('/api/collections');if(!r.ok)throw 0;const d=await r.json();
