@@ -1,39 +1,37 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FACE Prep · Sign in</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
-  --accent:#ff6a00; --bg:#f5f5f7; --bg2:#ececee; --panel:#fff;
-  --line:rgba(0,0,0,.1); --line2:rgba(0,0,0,.14); --ink:#1d1d1f; --ink2:#515154; --ink3:#86868b;
-  --rose:#ff453a; --good:#34c759;
+  --sans:"Google Sans Text","Google Sans",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --accent:#ff6a00; --bg:#000; --bg2:#1c1c1e; --panel:#1c1c1e;
+  --line:rgba(255,255,255,.12); --line2:rgba(255,255,255,.18);
+  --ink:#f5f5f7; --ink2:#aeaeb2; --ink3:#8e8e93; --rose:#ff453a; --good:#34c759;
 }
-@media(prefers-color-scheme:dark){:root{
-  --bg:#000; --bg2:#1c1c1e; --panel:#1c1c1e; --line:rgba(255,255,255,.12);
-  --line2:rgba(255,255,255,.18); --ink:#f5f5f7; --ink2:#aeaeb2; --ink3:#8e8e93;
-}}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
 body{background:
-  radial-gradient(900px 500px at 50% -5%, rgba(255,106,0,.14), transparent 60%), var(--bg);
-  color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;letter-spacing:-.01em;
+  radial-gradient(900px 500px at 50% -5%, rgba(255,106,0,.16), transparent 60%), var(--bg);
+  color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;
   display:grid;place-items:center;padding:22px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:38px 34px;
-  width:100%;max-width:392px;box-shadow:0 1px 3px rgba(0,0,0,.06),0 24px 70px rgba(0,0,0,.12);text-align:center}
-.logo{width:60px;height:60px;border-radius:17px;background:linear-gradient(135deg,var(--accent),#ff5e00);
-  display:grid;place-items:center;font-weight:700;font-size:28px;color:#fff;margin:0 auto 20px;
-  box-shadow:0 10px 26px rgba(255,106,0,.4)}
-h1{font-size:21px;font-weight:600;letter-spacing:-.02em}
-p.sub{color:var(--ink3);font-size:13px;margin:6px 0 26px;line-height:1.5}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:36px 34px;
+  width:100%;max-width:392px;box-shadow:0 1px 3px rgba(0,0,0,.4),0 24px 70px rgba(0,0,0,.5);text-align:center}
+.logocard{background:#fff;border-radius:12px;padding:12px 18px;display:inline-flex;align-items:center;margin:0 auto 22px;
+  box-shadow:0 6px 20px rgba(0,0,0,.3)}
+.logo-svg{height:30px;width:auto;display:block}
+p.sub{color:var(--ink3);font-size:13px;margin:0 0 26px;line-height:1.5}
 label{display:block;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.05em;
-  color:var(--ink3);font-weight:600;margin-bottom:7px}
+  color:var(--ink3);font-weight:500;margin-bottom:7px}
 input{width:100%;background:var(--bg2);border:1px solid var(--line);color:var(--ink);
-  padding:13px 15px;border-radius:13px;font-size:16px;font-family:inherit;min-height:50px;transition:.15s}
+  padding:13px 15px;border-radius:13px;font-size:16px;font-family:var(--sans);min-height:50px;transition:.15s}
 input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(255,106,0,.16)}
 button{width:100%;margin-top:16px;background:var(--accent);color:#fff;border:none;padding:14px;
-  border-radius:13px;font-size:16px;font-weight:600;font-family:inherit;cursor:pointer;min-height:52px;transition:.15s}
+  border-radius:13px;font-size:16px;font-weight:600;font-family:var(--sans);cursor:pointer;min-height:52px;transition:.15s}
 button:hover{filter:brightness(1.05)} button:active{transform:scale(.99)}
 button:disabled{opacity:.6;cursor:default}
 .msg{margin-top:14px;font-size:13px;min-height:18px}
@@ -43,8 +41,7 @@ button:disabled{opacity:.6;cursor:default}
 </head>
 <body>
   <form class="card" id="form">
-    <div class="logo">F</div>
-    <h1>FACE Prep</h1>
+    <div class="logocard"><svg class="logo-svg" fill="none" font-family="Times New Roman" font-size="16" viewBox="0 0 492 64" xmlns="http://www.w3.org/2000/svg"><g id="FACE Prep"><path clip-rule="evenodd" d="M82.7524 1.52037H122.543V13.6929H95.8207V25.8653H120.533V38.0378H95.8207V61.3684H82.7524V1.52037ZM146.838 1.52037H157.644L183.446 61.3684H168.702L163.592 48.6887H140.555L135.613 61.3684H121.204L146.838 1.52037ZM151.863 18.9337L144.659 37.5305H159.151L151.863 18.9337ZM228.18 17.0753C226.896 15.4974 225.318 14.2858 223.447 13.4404C221.576 12.5951 219.412 12.1725 216.955 12.1725C214.497 12.1725 212.222 12.6515 210.127 13.6095C208.033 14.5675 206.218 15.9059 204.682 17.6247C203.147 19.3435 201.946 21.3864 201.08 23.7532C200.215 26.1201 199.782 28.6842 199.782 31.4456C199.782 34.2633 200.215 36.8415 201.08 39.1802C201.946 41.5189 203.133 43.5476 204.64 45.2664C206.148 46.9852 207.922 48.3236 209.96 49.2816C211.998 50.2397 214.19 50.7187 216.536 50.7187C219.217 50.7187 221.59 50.1551 223.656 49.028C225.723 47.901 227.426 46.3231 228.766 44.2943L239.657 52.4938C237.143 56.0441 233.96 58.6646 230.107 60.3552C226.253 62.0458 222.288 62.8911 218.211 62.8911C213.576 62.8911 209.304 62.1585 205.394 60.6933C201.485 59.2281 198.106 57.129 195.258 54.3958C192.41 51.6626 190.19 48.3518 188.598 44.4634C187.007 40.5749 186.211 36.2357 186.211 31.4456C186.211 26.6555 187.007 22.3162 188.598 18.4278C190.19 14.5393 192.41 11.2286 195.258 8.49538C198.106 5.76219 201.485 3.66302 205.394 2.19781C209.304 0.732596 213.576 0 218.211 0C219.887 0 221.632 0.154972 223.447 0.464921C225.262 0.77487 227.049 1.26796 228.808 1.94422C230.568 2.62047 232.257 3.52212 233.876 4.64921C235.496 5.7763 236.948 7.15696 238.233 8.79124L228.18 17.0753ZM247.276 1.52037H287.57V13.6929H260.345V24.851H286.062V37.0234H260.345V49.1959H289.078V61.3684H247.276V1.52037Z" fill="black" fill-rule="evenodd" id="FACE" /><g id="Group 2"><path clip-rule="evenodd" d="M39.2444 0.00195312H26.163V13.0833H39.2444V0.00195312ZM13.0778 26.1636H0V13.0843V13.0822V0.00294118H13.0778V0.00195312H26.1591V13.0822V13.0833V26.1636H13.0814H13.0778ZM13.0814 26.165H0V39.2464H13.0814V26.165Z" fill="#F05136" fill-rule="evenodd" id="Combined Shape" /><path clip-rule="evenodd" d="M62.393 10.0586H49.3117V23.1389H36.2314V36.2202H49.3117H49.3128H62.393V23.14V23.1389V10.0586ZM36.2275 36.2216H23.1461V49.3019H10.0684V62.3833H23.1461H23.1497H36.2275V49.303V49.3019V36.2216ZM36.2314 36.2216H49.3117H49.3128H62.393V49.3019V49.303V62.3833H49.3128H49.3117H36.2314V49.303V49.3019V36.2216Z" fill="#F05136" fill-rule="evenodd" id="Combined Shape_2" /></g><g id="Prep"><path clip-rule="evenodd" d="M308.939 0.00195312H491.594L464.831 62.39H308.939L308.939 0.00195312Z" fill="#F05136" fill-rule="evenodd" id="Mask" /><mask height="63" id="mask0_403_72" maskUnits="userSpaceOnUse" width="184" x="308" y="0" style="width:184px; height:63px; font-family:'Times New Roman'; font-size:16px; fill:none; mask-type:luminance"><path clip-rule="evenodd" d="M308.939 0.00195312H491.594L464.831 62.39H308.939L308.939 0.00195312Z" fill="white" fill-rule="evenodd" id="Mask_2" /></mask><g mask="url(#mask0_403_72)"><path clip-rule="evenodd" d="M316.966 7.04883H334.774C337.257 7.04883 339.604 7.27523 341.816 7.72805C344.028 8.18087 345.958 8.96197 347.605 10.0714C349.253 11.1808 350.562 12.6751 351.533 14.5543C352.503 16.4335 352.988 18.7994 352.988 21.6522C352.988 24.4596 352.537 26.8142 351.634 28.7161C350.731 30.6179 349.49 32.1348 347.91 33.2669C346.33 34.3989 344.457 35.2027 342.29 35.6781C340.123 36.1536 337.776 36.3913 335.248 36.3913H327.529V55.1379H316.966V7.04883ZM327.529 27.4285H334.571C335.519 27.4285 336.433 27.3379 337.313 27.1568C338.194 26.9756 338.984 26.67 339.683 26.2398C340.383 25.8096 340.947 25.221 341.376 24.4738C341.805 23.7267 342.019 22.7871 342.019 21.6551C342.019 20.4324 341.737 19.4476 341.173 18.7004C340.609 17.9533 339.886 17.3759 339.006 16.9684C338.126 16.5609 337.144 16.3005 336.061 16.1873C334.977 16.0741 333.939 16.0175 332.946 16.0175H327.529V27.4285ZM368.494 22.1312H358.338V55.1415H368.494V41.3532C368.494 39.7231 368.585 38.2288 368.765 36.8703C368.946 35.5119 369.341 34.3459 369.95 33.3723C370.56 32.3988 371.429 31.6403 372.557 31.0969C373.686 30.5536 375.22 30.2819 377.161 30.2819C377.929 30.2819 378.662 30.3385 379.362 30.4517C380.062 30.5649 380.773 30.7347 381.495 30.9611V21.6557C380.998 21.5199 380.457 21.4293 379.87 21.384C379.283 21.3387 378.696 21.3161 378.109 21.3161C375.852 21.3161 373.979 21.8255 372.489 22.8444C371 23.8632 369.713 25.3914 368.63 27.4291H368.494V22.1312ZM415.824 49.436C414.199 51.519 412.145 53.1264 409.662 54.2585C407.179 55.3905 404.606 55.9566 401.943 55.9566C399.415 55.9566 397.034 55.549 394.799 54.7339C392.565 53.9189 390.624 52.7529 388.976 51.2359C387.329 49.719 386.031 47.8964 385.083 45.7682C384.135 43.6399 383.661 41.2627 383.661 38.6363C383.661 36.01 384.135 33.6327 385.083 31.5045C386.031 29.3762 387.329 27.5537 388.976 26.0367C390.624 24.5198 392.565 23.3538 394.799 22.5387C397.034 21.7236 399.415 21.3161 401.943 21.3161C404.29 21.3161 406.423 21.7236 408.342 22.5387C410.26 23.3538 411.885 24.5198 413.217 26.0367C414.548 27.5537 415.575 29.3762 416.298 31.5045C417.02 33.6327 417.381 36.01 417.381 38.6363V41.8287H393.818C394.224 43.7758 395.104 45.3267 396.458 46.4814C397.813 47.6361 399.483 48.2134 401.469 48.2134C403.139 48.2134 404.55 47.8398 405.701 47.0927C406.852 46.3455 407.856 45.3833 408.714 44.206L415.824 49.436ZM405.534 30.4855C406.707 31.7081 407.271 33.1798 407.226 34.9005H393.82C393.865 34.0854 394.057 33.3043 394.395 32.5571C394.734 31.81 395.208 31.1534 395.817 30.5874C396.426 30.0214 397.16 29.5572 398.018 29.195C398.875 28.8327 399.868 28.6516 400.997 28.6516C402.848 28.6516 404.36 29.2629 405.534 30.4855ZM424.493 22.1312H433.837V26.4782H433.972C434.378 25.8895 434.909 25.2896 435.563 24.6783C436.218 24.067 436.985 23.5123 437.865 23.0142C438.746 22.5161 439.705 22.1085 440.743 21.7916C441.781 21.4746 442.887 21.3161 444.061 21.3161C446.499 21.3161 448.71 21.735 450.697 22.5727C452.683 23.4104 454.387 24.5877 455.809 26.1046C457.231 27.6216 458.325 29.4215 459.093 31.5045C459.86 33.5874 460.244 35.8741 460.244 38.3646C460.244 40.674 459.894 42.8815 459.194 44.9871C458.495 47.0927 457.502 48.9605 456.215 50.5907C454.929 52.2208 453.36 53.5227 451.509 54.4962C449.658 55.4698 447.559 55.9566 445.212 55.9566C443.09 55.9566 441.116 55.6283 439.287 54.9717C437.459 54.3151 435.958 53.1944 434.785 51.6095H434.649V70.6278H424.493V22.1312ZM435.968 44.6806C434.546 43.141 433.835 41.126 433.835 38.6355C433.835 36.145 434.546 34.13 435.968 32.5904C437.39 31.0508 439.388 30.281 441.961 30.281C444.534 30.281 446.531 31.0508 447.953 32.5904C449.375 34.13 450.086 36.145 450.086 38.6355C450.086 41.126 449.375 43.141 447.953 44.6806C446.531 46.2202 444.534 46.9899 441.961 46.9899C439.388 46.9899 437.39 46.2202 435.968 44.6806Z" fill="white" fill-rule="evenodd" id="Prep_2" /></g></g></g></svg></div>
     <p class="sub">Invoicing &amp; Collections Summary<br>Authorised access only</p>
     <label for="pw">Password</label>
     <input type="password" id="pw" autocomplete="current-password" placeholder="Enter team password" autofocus>
@@ -58,11 +55,11 @@ const form=document.getElementById('form'),pw=document.getElementById('pw'),
 form.addEventListener('submit',async e=>{
   e.preventDefault();
   msg.className='msg';msg.textContent='';
-  btn.disabled=true;btn.textContent='Signing in…';
+  btn.disabled=true;btn.textContent='Signing in\u2026';
   try{
     const r=await fetch('/api/auth',{method:'POST',headers:{'Content-Type':'application/json'},
       body:JSON.stringify({password:pw.value})});
-    if(r.ok){msg.className='msg ok';msg.textContent='Welcome back. Loading…';
+    if(r.ok){msg.className='msg ok';msg.textContent='Welcome back. Loading\u2026';
       location.href='/';}
     else{msg.className='msg err';msg.textContent='Incorrect password. Try again.';
       btn.disabled=false;btn.textContent='Sign in';pw.value='';pw.focus();}
