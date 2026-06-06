@@ -41,7 +41,7 @@ module.exports = async (req, res) => {
       };
       const activity = {};
       for (const a of actRows) (activity[a.key] = activity[a.key] || [])
-        .push({ ts: new Date(a.ts).getTime(), author: a.author, who: a.who || '', note: a.note });
+        .push({ id: a.id, ts: new Date(a.ts).getTime(), author: a.author, who: a.who || '', note: a.note });
       return res.end(JSON.stringify({ meta, activity }));
     }
 
@@ -51,10 +51,24 @@ module.exports = async (req, res) => {
       if (!p.key) { res.statusCode = 400; return res.end(JSON.stringify({ error: 'key required' })); }
 
       if (p.action === 'note') {
-        await sb('invoice_activity', {
+        const inserted = await sb('invoice_activity', {
           method: 'POST',
           body: JSON.stringify({ key: p.key, author: p.author || 'Team', who: p.who || '', note: p.note || '' }),
         });
+        const id = Array.isArray(inserted) && inserted[0] ? inserted[0].id : null;
+        return res.end(JSON.stringify({ ok: true, id }));
+      }
+      if (p.action === 'note_edit') {
+        if (p.id == null) { res.statusCode = 400; return res.end(JSON.stringify({ error: 'id required' })); }
+        await sb(`invoice_activity?id=eq.${encodeURIComponent(p.id)}`, {
+          method: 'PATCH', prefer: 'return=minimal',
+          body: JSON.stringify({ note: p.note || '' }),
+        });
+        return res.end(JSON.stringify({ ok: true }));
+      }
+      if (p.action === 'note_delete') {
+        if (p.id == null) { res.statusCode = 400; return res.end(JSON.stringify({ error: 'id required' })); }
+        await sb(`invoice_activity?id=eq.${encodeURIComponent(p.id)}`, { method: 'DELETE', prefer: 'return=minimal' });
         return res.end(JSON.stringify({ ok: true }));
       }
       // default: upsert meta (last-write-wins on these fields only)
