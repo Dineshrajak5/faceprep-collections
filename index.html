@@ -259,7 +259,14 @@ footer{text-align:center;color:var(--ink3);font-size:11px;margin-top:30px;line-h
   .bnav-btn .ic{width:22px;height:22px}
   .bnav-btn.on{color:var(--accent)}
   /* ===== tables become cards ===== */
-  .tscroll{max-height:none;overflow:visible;background:transparent;padding:12px 12px 4px}
+  .tscroll{max-height:none;overflow:visible;background:transparent;padding:0}
+  .tcard{background:transparent;border:none;box-shadow:none}
+  .tcap{padding:4px 2px 12px;border-bottom:none}
+  /* slicers stack; pill groups wrap instead of overflowing */
+  .slicers{flex-direction:column;align-items:stretch;gap:14px}
+  .slc{flex-direction:column;align-items:stretch;gap:7px}
+  .pills{flex-wrap:wrap;width:100%}
+  .pill-b{flex:1 1 auto;text-align:center}
   #tbl,#fuTbl,#colTbl{display:block;width:100%;min-width:0;border-collapse:collapse}
   #tbl tbody,#fuTbl tbody,#colTbl tbody{display:block;width:100%}
   #tbl thead,#fuTbl thead,#colTbl thead{display:none}
@@ -277,6 +284,13 @@ footer{text-align:center;color:var(--ink3);font-size:11px;margin-top:30px;line-h
   .lastnote{max-width:60vw}
   .due-cards{grid-template-columns:repeat(2,1fr)}
   .draw{padding-bottom:env(safe-area-inset-bottom)}
+  /* slicers: stack + wrap so nothing runs off-screen */
+  .slicers{flex-direction:column;align-items:stretch;gap:13px;margin-bottom:14px}
+  .slc{flex-direction:column;align-items:flex-start;gap:7px;width:100%}
+  .slc .sl{padding-left:2px}
+  .pills{display:flex;flex-wrap:wrap;width:100%;gap:5px}
+  .pill-b{flex:0 0 auto}
+  .slc select,.slc input[type=text]{width:100%}
 }
 /* ---------- follow-up / drawer ---------- */
 .pbanner{display:inline-flex;align-items:center;gap:7px;font-size:11px;padding:4px 11px;border-radius:980px;font-weight:500}
