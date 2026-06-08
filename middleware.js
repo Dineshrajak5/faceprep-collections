@@ -6,7 +6,7 @@
 export const config = {
   // Allow the login page (clean URL `/login` AND `/login.html`), the auth API,
   // and Vercel internals through without a session. Gate everything else.
-  matcher: ['/((?!login|api/auth|api/cron|favicon.ico|robots.txt|_vercel).*)'],
+  matcher: ['/((?!login|api/auth|api/cron|favicon.ico|robots.txt|manifest.json|sw.js|icon-192.png|icon-512.png|apple-touch-icon.png|_vercel).*)'],
 };
 
 function b64urlToBytes(s) {
