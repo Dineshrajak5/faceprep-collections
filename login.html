@@ -68,7 +68,7 @@ form.addEventListener('submit',async e=>{
     const r=await fetch('/api/auth',{method:'POST',headers:{'Content-Type':'application/json'},
       body:JSON.stringify({password:pw.value})});
     if(r.ok){msg.className='msg ok';msg.textContent='Welcome back. Loading\u2026';
-      location.href='/';}
+      location.replace('/');}
     else{msg.className='msg err';msg.textContent='Incorrect password. Try again.';
       btn.disabled=false;btn.textContent='Sign in';pw.value='';pw.focus();}
   }catch(err){msg.className='msg err';msg.textContent='Something went wrong. Please retry.';
