@@ -1,10 +1,9 @@
-// FACE Prep PWA service worker. Network-first for fresh data/HTML,
-// cache fallback for offline. Bump CACHE on each release to clear old assets.
-const CACHE = 'faceprep-v1';
+// FACE Prep PWA service worker. Network-first for fresh data/HTML, cache fallback offline.
+// Updates wait until the user taps "Refresh" (page posts SKIP_WAITING). Bump CACHE per release.
+const CACHE = 'faceprep-v2';
 const SHELL = ['/', '/login', '/manifest.json', '/icon-192.png', '/icon-512.png', '/apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
-  self.skipWaiting();
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL).catch(() => {})));
 });
 self.addEventListener('activate', e => {
@@ -13,12 +12,12 @@ self.addEventListener('activate', e => {
       .then(() => self.clients.claim())
   );
 });
+self.addEventListener('message', e => { if (e.data === 'SKIP_WAITING') self.skipWaiting(); });
 self.addEventListener('fetch', e => {
   const req = e.request;
-  if (req.method !== 'GET') return;                       // never cache writes
+  if (req.method !== 'GET') return;
   const url = new URL(req.url);
-  if (url.pathname.startsWith('/api/')) return;           // always hit network for data/auth
-  // network-first, fall back to cache (offline)
+  if (url.pathname.startsWith('/api/')) return;          // always network for data/auth
   e.respondWith(
     fetch(req).then(res => {
       const copy = res.clone();
